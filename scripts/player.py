@@ -5,20 +5,16 @@ import os
 
 class Player(Entity):
     def __init__(self, game):
-        super().__init__()
+        super().__init__("player")
         self.game = game
 
-        self.sprite_sheet = pygame.image.load(os.path.join(sys.path[0], "assets\\sprites\\player.png"))
-        self.image = self.get_img(0, 0)
+        self.sprite_sheet = super().getSpriteSheet()
+        self.image = super().get_img(0, 0)
+        self.image.set_colorkey([0, 0, 0])
         self.rect = self.image.get_rect()
-
-        self.speed = 2
         self.key_pressed = {}
 
-    def get_img(self, x, y):
-        image = pygame.Surface([32, 32])
-        image.blit(self.sprite_sheet, (0,0), (x, y, 32, 32))
-        return image
+        self.speed = 2
 
     def Update(self):         
         if self.key_pressed.get(pygame.K_RIGHT):
