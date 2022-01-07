@@ -2,7 +2,7 @@ import pygame
 import sys
 import os
 
-class Entity(pygame.sprite.Sprite):
+class Character(pygame.sprite.Sprite):
     def __init__(self, sprite_sheet):
         super().__init__()
 

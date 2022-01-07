@@ -1,9 +1,9 @@
-from scripts.entity import Entity
+from scripts.character import Character
 import pygame
 import sys
 import os
 
-class Player(Entity):
+class Player(Character):
     def __init__(self, game):
         super().__init__("player")
         self.game = game
@@ -20,7 +20,7 @@ class Player(Entity):
         }
 
         self.feet = pygame.Rect(0, 0, self.rect.width * 0.5, 12)
-        self.position = [0,0]
+        self.position = [114,196]
         self.old_position = self.position.copy()
         self.key_pressed = {}
         self.speed = 3
@@ -39,8 +39,17 @@ class Player(Entity):
         elif type == "left":
             self.position[0] -= self.speed
 
+    def move_back(self):
+        self.position = self.old_position
+
+    def checkCollisions(self):
+        for sprite in self.game.map_manager.get_group().sprites():
+            if sprite.feet.collidelist(self.game.map_manager.get_walls()) > -1:
+                sprite.move_back()
+
     def Update(self):
         self.rect.topleft = self.position
         self.feet.midbottom = self.rect.midbottom
 
+        self.checkCollisions()
         

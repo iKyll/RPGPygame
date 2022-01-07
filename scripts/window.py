@@ -14,6 +14,7 @@ class Window():
         self.window = pygame.display.set_mode(resolution)
 
     def Update(self):
+        self.game.player.save_location()
         self.game.map_manager.draw()
 
         for event in pygame.event.get():

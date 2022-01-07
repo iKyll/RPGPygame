@@ -17,8 +17,8 @@ class Game:
     def Update(self):
         self.window.Update()
         self.map_manager.Update()
-        self.player.Update()
         self.input_handler.Update()
+        self.player.Update()
 
         self.clock.tick(60)
 

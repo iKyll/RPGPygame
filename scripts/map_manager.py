@@ -24,7 +24,6 @@ class MapManager:
 
         self.register_map("temp_map")
 
-
         self.teleport_player("player_spawn")
 
     def register_map(self, name):

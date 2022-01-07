@@ -1,6 +1,6 @@
-from scripts.entity import Entity
+from scripts.entity import Character
 import pygame
 
-class NPC(Entity):
+class NPC(Character):
     def __init__(self):
         super().__init__()
