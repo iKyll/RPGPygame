@@ -4,6 +4,12 @@ Teleport Player to his spawn point
 When touching a wall deplacement input is locked
 
 Create Monsters (Slimes, Goblins, Golems...)
+	Monster Class created
+
+	Check if no problem
+	Create monster's sprites
+	Spawn a monster
+
 Create NPC Class
 
 

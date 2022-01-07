@@ -1,0 +1,33 @@
+{
+    "slime":  {
+        "level": 1,
+        "health": [10, 25],
+        "damage": [3, 8],
+        "exp_value": [1, 3],
+        "coin_value": 1
+    },
+
+    "goblin": {
+        "level": 5,
+        "health": [30, 45],
+        "damage": [12, 15],
+        "exp_value": [3, 7],
+        "coin_value": [2, 4]
+    },
+
+    "golem": {
+        "level": 10,
+        "health": [50, 65],
+        "damage": [20, 25],
+        "exp_value": [10, 12],
+        "coin_value": [5, 8]
+    },
+
+    "orc": {
+        "level": 10,
+        "health": [85, 100],
+        "damage": [12, 15],
+        "exp_value": [10, 12],
+        "coin_value": [5, 8]
+    }
+}
