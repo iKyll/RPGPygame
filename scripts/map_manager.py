@@ -13,7 +13,7 @@ class Map:
     map: str
     walls: List[pygame.Rect]
     group: pyscroll.PyscrollGroup
-    tmx_data = pytmx.TiledMap
+    tmx_data: pytmx.TiledMap
 
 class MapManager:
     def __init__(self, game):
@@ -24,10 +24,13 @@ class MapManager:
 
         self.register_map("temp_map")
 
+
+        self.teleport_player("player_spawn")
+
     def register_map(self, name):
-        tmx_data = pytmx.until_pygame.load_pygame(os.path.join(sys.path[0], f"assets\\maps\\{name}.tmx"))
+        tmx_data = pytmx.load_pygame(os.path.join(sys.path[0], f"assets\\maps\\{name}.tmx"))
         map_data = pyscroll.data.TiledMapData(tmx_data)
-        map_layer = pyscroll.orthografic.BufferedRenderer(map_data, self.game.window.window.get_size())
+        map_layer = pyscroll.BufferedRenderer(map_data, self.game.window.window.get_size())
         map_layer.zoom = 2
 
         walls = []
@@ -53,6 +56,7 @@ class MapManager:
         point = self.get_object(name)
         self.game.player.rect.x = point.x
         self.game.player.rect.y = point.y
+        self.game.player.save_location()
 
 
     def draw(self):

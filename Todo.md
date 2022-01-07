@@ -1,2 +1,2 @@
-Fix Pytmx Import (For use of Visual Studio)
-Fix Pytmx Until_Pygame (Has change)
+Teleport Player to his spawn point
+Reajust Player's movement (Direction > Other)

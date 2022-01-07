@@ -21,6 +21,9 @@ class Window():
                 pygame.quit()
                 sys.exit()
             elif event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_RIGHT:
-                    self.game.player.key_pressed[event.key] = True
+                self.game.input_handler.pressed[event.key] = True
+
+            elif event.type == pygame.KEYUP:
+                self.game.input_handler.pressed[event.key] = False
+        
         pygame.display.flip()
