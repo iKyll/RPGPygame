@@ -36,30 +36,30 @@ class Monster(Character):
         monster_id = json.loads(monster_id)
 
         if self.type == "slime":
-            self.level = monster_id.slime.level
-            self.health = random.randint(monster_id.slime.health[0], monster_id.slime.health[1])
-            self.damage = random.randint(monster_id.slime.damage[0], monster_id.slime.damage[1])
-            self.exp_value = random.randint(monster_id.slime.exp_value[0], monster_id.slime.exp_value[1])
-            self.coin_value = random.randint(monster_id.slime.coin_value[0], monster_id.slime.coin_value[1])
+            self.level = monster_id['slime']['level']
+            self.health = random.randint(monster_id['slime']['health'][0], monster_id['slime']['health'][1])
+            self.damage = random.randint(monster_id['slime']['damage'][0], monster_id['slime']['damage'][1])
+            self.exp_value = random.randint(monster_id['slime']['exp_value'][0], monster_id['slime']['exp_value'][1])
+            self.coin_value = monster_id['slime']['coin_value']
             
         elif self.type == "goblin":
-            self.level = monster_id.goblin.level
-            self.health = random.randint(monster_id.goblin.health[0], monster_id.goblin.health[1])
-            self.damage = random.randint(monster_id.goblin.damage[0], monster_id.goblin.damage[1])
-            self.exp_value = random.randint(monster_id.goblin.exp_value[0], monster_id.goblin.exp_value[1])
-            self.coin_value = random.randint(monster_id.goblin.coin_value[0], monster_id.goblin.coin_value[1])
+            self.level = monster_id['goblin']['level']
+            self.health = random.randint(monster_id['goblin']['health'][0], monster_id['goblin']['health'][1])
+            self.damage = random.randint(monster_id['goblin']['damage'][0], monster_id['goblin']['damage'][1])
+            self.exp_value = random.randint(monster_id['goblin']['exp_value'][0], monster_id['goblin']['exp_value'][1])
+            self.coin_value = monster_id['goblin']['coin_value']
  
         elif self.type == "golem":
-            self.level = monster_id.golem.level
-            self.health = random.randint(monster_id.golem.health[0], monster_id.golem.health[1])
-            self.damage = random.randint(monster_id.golem.damage[0], monster_id.golem.damage[1])
-            self.exp_value = random.randint(monster_id.golem.exp_value[0], monster_id.golem.exp_value[1])
-            self.coin_value = random.randint(monster_id.golem.coin_value[0], monster_id.golem.coin_value[1])
+            self.level = monster_id['golem']['level']
+            self.health = random.randint(monster_id['golem']['health'][0], monster_id['golem']['health'][1])
+            self.damage = random.randint(monster_id['golem']['damage'][0], monster_id['golem']['damage'][1])
+            self.exp_value = random.randint(monster_id['golem']['exp_value'][0], monster_id['golem']['exp_value'][1])
+            self.coin_value = monster_id['golem']['coin_value']
  
         elif self.type == "orc":
-            self.level = monster_id.orc.level
-            self.health = random.randint(monster_id.orc.health[0], monster_id.orc.health[1])
-            self.damage = random.randint(monster_id.orc.damage[0], monster_id.orc.damage[1])
-            self.exp_value = random.randint(monster_id.orc.exp_value[0], monster_id.orc.exp_value[1])
-            self.coin_value = random.randint(monster_id.orc.coin_value[0], monster_id.orc.coin_value[1])
+            self.level = monster_id['orc']['level']
+            self.health = random.randint(monster_id['orc']['health'][0], monster_id['orc']['health'][1])
+            self.damage = random.randint(monster_id['orc']['damage'][0], monster_id['orc']['damage'][1])
+            self.exp_value = random.randint(monster_id['orc']['exp_value'][0], monster_id['orc']['exp_value'][1])
+            self.coin_value = monster_id['orc']['coin_value']
  

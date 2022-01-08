@@ -20,12 +20,18 @@ class Player(Character):
         }
 
         self.feet = pygame.Rect(0, 0, self.rect.width * 0.5, 12)
-        self.position = [114,196]
+        self.position = [0,0]
         self.old_position = self.position.copy()
         self.key_pressed = {}
         self.speed = 3
 
     def save_location(self): self.old_position = self.position.copy()
+
+    def change_pos(self, x, y):
+        self.position[0] = x
+        self.position[1] = y
+
+        self.save_location()
 
     def move_player(self, type):
         self.image = self.images[type]

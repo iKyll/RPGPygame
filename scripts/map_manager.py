@@ -53,9 +53,7 @@ class MapManager:
 
     def teleport_player(self, name):
         point = self.get_object(name)
-        self.game.player.rect.x = point.x
-        self.game.player.rect.y = point.y
-        self.game.player.save_location()
+        self.game.player.change_pos(point.x, point.y)
 
 
     def draw(self):
