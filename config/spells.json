@@ -1,0 +1,22 @@
+{
+    "fireball": {
+        "cost": 30,
+        "damage": 1.25
+    },
+    "heal": {
+        "cost": 45,
+        "value": 20
+    },
+    "cursed": {
+        "cost": 30,
+        "damage": 0.25
+    },
+    "boost": {
+        "cost": 35,
+        "value": 0.25
+    },
+    "lightning_bolt": {
+        "cost": 25,
+        "damage": 0.1
+    }
+}

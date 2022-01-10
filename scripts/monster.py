@@ -2,12 +2,13 @@ from scripts.character import Character
 import pygame
 
 import random
+import math
 import json
 import sys
 import os
 
 class Monster(Character):
-    def __init__(self, game, type):
+    def __init__(self, game, type, normal_monster=True):
         super().__init__(type)
         self.game = game
         self.type = type
@@ -28,9 +29,14 @@ class Monster(Character):
         self.exp_value = None
         self.coin_value = None
 
-        self.init_stats()
+        self.cursed = False
+        self.cursed_turn = None
+        self.paralyzed = False
 
-    def init_stats(self):
+        if normal_monster:
+            self.init_stats()
+
+    def init_stats(self) -> None:
         json_reader = open(os.path.join(sys.path[0], "config\\monster.json"), "r")
         monster_id = json_reader.read()
         monster_id = json.loads(monster_id)
@@ -62,4 +68,13 @@ class Monster(Character):
             self.damage = random.randint(monster_id['orc']['damage'][0], monster_id['orc']['damage'][1])
             self.exp_value = random.randint(monster_id['orc']['exp_value'][0], monster_id['orc']['exp_value'][1])
             self.coin_value = monster_id['orc']['coin_value']
- 
+
+    def take_damage(self, n):
+        # TODO add defence
+        self.health -= n
+
+    def curse_damage(self):
+        if self.curse:
+            self.take_damage(math.ceil(self.game.player.damage * 0.25))
+            self.cursed_turn -= 1
+
